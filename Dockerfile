@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 
 LABEL maintainer="Arnaud Becheler" \
-      description="Having quetzal-EGGS and quetzal-CRUMBS work on OSG with Singularity" \
+      description="Having quetzal-CoalTL, quetzal-EGGS and quetzal-CRUMBS work, compatible with Open Science Grid with Singularity" \
       version="0.0.1"
 
 ARG DEBIAN_FRONTEND=noninteractive
