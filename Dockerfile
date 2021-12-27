@@ -6,9 +6,10 @@ LABEL maintainer="Arnaud Becheler" \
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-########## QUETZAL-EGGS 
+########## QUETZAL-EGGS
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends\
+                    vim \
                     git \
                     gcc-9 \
                     g++ \
@@ -22,7 +23,7 @@ RUN apt-get install -y --no-install-recommends\
 # Install GDAL dependencies
 RUN apt-get install -y libgdal-dev g++ --no-install-recommends && \
     apt-get clean -y
-    
+
 # Update C env vars so compiler can find gdal - once EGGS compiled we don't care anymore if singularity finds it or not
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
