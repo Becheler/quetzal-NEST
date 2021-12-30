@@ -18,7 +18,9 @@ RUN apt-get install -y --no-install-recommends\
                     cmake \
                     unzip \
                     tar \
-                    ca-certificates
+                    ca-certificates \
+                    doxygen \
+                    graphviz
 
 # Install GDAL dependencies
 RUN apt-get install -y libgdal-dev g++ --no-install-recommends && \
