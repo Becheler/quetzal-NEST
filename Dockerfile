@@ -46,7 +46,7 @@ RUN set -xe \
 
 RUN pip3 install --upgrade pip
 RUN pip3 install build twine pipenv numpy # for crumbs publishing
-RUN pip3 install rasterio matplotlib imageio imageio-ffmpeg pyproj shapely fiona scikit-learn pyimpute geopandas
+RUN pip3 install rasterio matplotlib imageio imageio-ffmpeg pyproj shapely fiona scikit-learn pyimpute geopandas pygbif
 RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==0.0.14
 
 # Clean to make image smaller
