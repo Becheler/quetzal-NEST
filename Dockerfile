@@ -20,9 +20,7 @@ RUN apt-get install -y --no-install-recommends\
                     tar \
                     ca-certificates \
                     doxygen \
-                    graphviz \
-                    python3-vtk7 \
-                    mayavi
+                    graphviz
 
 # Install GDAL dependencies
 RUN apt-get install -y libgdal-dev g++ --no-install-recommends && \
@@ -58,12 +56,10 @@ RUN pip3 install rasterio && \
     pip3 install scikit-learn && \ 
     pip3 install pyimpute && \ 
     pip3 install geopandas && \
-    pip3 install pygbif && \ 
-    pip3 install vtk && \
-    pip3 install pyqt5 && \
-    
+    pip3 install pygbif &&
+
+########## MAYAVI 
 RUN pip3 install mayavi
-    
   
 RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==0.0.15
 
