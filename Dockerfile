@@ -58,7 +58,9 @@ RUN pip3 install rasterio && \
     pip3 install geopandas && \
     pip3 install pygbif && \ 
     pip3 install vtk && \
-    pip3 install pyqt5
+    pip3 install pyqt5 && \
+    pip3 install libpq5 && \
+    pip3 install libvtk6-dev
 RUN pip3 install mayavi
     
   
