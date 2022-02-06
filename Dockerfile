@@ -60,6 +60,8 @@ RUN pip3 install rasterio && \
 
 ########## MAYAVI 
 RUN python3 -m pip install vtk
+RUN apt-get update && apt-get install -y python3-opencv
+RUN pip3 install opencv-python
 RUN pip3 install mayavi PyQt5
   
 RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==0.0.15
