@@ -21,7 +21,8 @@ RUN apt-get install -y --no-install-recommends\
                     ca-certificates \
                     doxygen \
                     graphviz \
-                    qt5-default
+                    python3-vtk7 \
+                    mayavi
 
 # Install GDAL dependencies
 RUN apt-get install -y libgdal-dev g++ --no-install-recommends && \
