@@ -59,7 +59,8 @@ RUN pip3 install rasterio && \
     pip3 install pygbif
 
 ########## MAYAVI 
-RUN pip3 install mayavi PyQt5 vtk
+RUN python -m pip install vtk
+RUN pip3 install mayavi PyQt5
   
 RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==0.0.15
 
