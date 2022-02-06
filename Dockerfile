@@ -56,7 +56,7 @@ RUN pip3 install rasterio && \
     pip3 install scikit-learn && \ 
     pip3 install pyimpute && \ 
     pip3 install geopandas && \
-    pip3 install pygbif &&
+    pip3 install pygbif
 
 ########## MAYAVI 
 RUN pip3 install mayavi
