@@ -67,6 +67,7 @@ RUN apt-get install -y --no-install-recommends xvbf libxkbcommon-x11-0 libxcb-ic
 RUN python3 -m pip install vtk
 RUN apt-get update && apt-get install -y python3-opencv && apt-get clean -y
 RUN pip3 install opencv-python
+RUN pip3 install PyVirtualDisplay
 RUN pip3 install mayavi PyQt5
   
 RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==0.0.15
