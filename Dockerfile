@@ -59,8 +59,13 @@ RUN pip3 install rasterio && \
     pip3 install pygbif
 
 ########## MAYAVI 
+
+# xcb plugin 
+RUN apt-get install -y --no-install-recommends libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 && \
+    apt-get clean -y
+    
 RUN python3 -m pip install vtk
-RUN apt-get update && apt-get install -y python3-opencv
+RUN apt-get update && apt-get install -y python3-opencv && apt-get clean -y
 RUN pip3 install opencv-python
 RUN pip3 install mayavi PyQt5
   
