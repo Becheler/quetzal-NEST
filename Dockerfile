@@ -61,7 +61,7 @@ RUN pip3 install rasterio && \
 ########## MAYAVI 
 
 # xcb plugin 
-RUN apt-get install -y --no-install-recommends libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 && \
+RUN apt-get install -y --no-install-recommends xvbf libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 && \
     apt-get clean -y
     
 RUN python3 -m pip install vtk
