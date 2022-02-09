@@ -63,7 +63,9 @@ RUN pip3 install rasterio && \
 # xcb plugin 
 RUN apt-get install -y --no-install-recommends xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 && \
     apt-get clean -y
-    
+# Trying to solve the weird xcfb error
+RUN apt-get install -y --no-install-recommends qt5-default && \
+    apt-get clean -y
 RUN python3 -m pip install vtk
 RUN apt-get update && apt-get install -y python3-opencv && apt-get clean -y
 RUN pip3 install opencv-python
