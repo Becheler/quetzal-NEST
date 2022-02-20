@@ -55,9 +55,9 @@ RUN pip3 install rasterio && \
     pip3 install fiona && \
     pip3 install scikit-learn && \
     pip3 install geopandas && \
-    pip3 install pygbif
-
-RUN python -m pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d
+    pip3 install pygbif && \
+    pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d
+    
 ########## MAYAVI 
 
 # xcb plugin 
