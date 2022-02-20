@@ -6,7 +6,8 @@ LABEL maintainer="Arnaud Becheler" \
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-########## QUETZAL-EGGS
+### QUETZAL-EGGS
+
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends\
                     vim \
@@ -38,31 +39,49 @@ RUN git clone --recurse-submodules https://github.com/Becheler/quetzal-EGGS \
 && cmake .. -DCMAKE_INSTALL_PREFIX="/usr/local/quetzal-EGGS" \
 && cmake --build . --config Release --target install
 
-########## QUETZAL-CRUMBS
+### QUETZAL-CRUMBS
+
 RUN set -xe \
     apt-get update && apt-get install -y \
     python3-pip \
     --no-install-recommends
 
 RUN pip3 install --upgrade pip
-RUN pip3 install build twine pipenv numpy # for crumbs publishing
+
+# for crumbs ackage publishing
+RUN pip3 install build twine pipenv numpy
+
+# for crumbs geospatial
 RUN pip3 install rasterio && \
     pip3 install matplotlib && \
     pip3 install imageio && \
     pip3 install imageio-ffmpeg && \
     pip3 install pyproj && \
     pip3 install shapely && \
-    pip3 install fiona && \
+    pip3 install fiona
+
+# For crumbs.get_gbif crumbs.get_chelsa and crumbs.sdm
+RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d && \
+    pip3 install xgboost && \
+    pip3 install lightgbm && \
     pip3 install scikit-learn && \
     pip3 install geopandas && \
-    pip3 install pygbif && \
-    pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d
-    
-########## MAYAVI 
+    pip3 install pygbif
 
-# xcb plugin 
-RUN apt-get install -y --no-install-recommends xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 && \
+# 3D visualizations with crumbs and MAYAVI
+
+# xcb plugin
+RUN apt-get install -y --no-install-recommends \
+                    xvfb \
+                    libxkbcommon-x11-0 \
+                    libxcb-icccm4 \
+                    libxcb-image0 \
+                    libxcb-keysyms1 \
+                    libxcb-randr0 \
+                    libxcb-render-util0 \
+                    libxcb-xinerama0 && \
     apt-get clean -y
+    
 # Trying to solve the weird xcfb error
 RUN apt-get install -y --no-install-recommends qt5-default && \
     apt-get clean -y
