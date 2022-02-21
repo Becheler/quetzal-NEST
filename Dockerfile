@@ -71,7 +71,7 @@ RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd8
 # 3D visualizations with crumbs and MAYAVI
 
 # xcb plugin
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update -y && apt-get install -y --no-install-recommends \
                     xvfb \
                     libxkbcommon-x11-0 \
                     libxcb-icccm4 \
