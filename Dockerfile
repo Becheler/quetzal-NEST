@@ -61,8 +61,7 @@ RUN pip3 install rasterio && \
     pip3 install fiona
 
 # For crumbs.get_gbif crumbs.get_chelsa and crumbs.sdm
-#RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d && \
-RUN pip3 install pyimpute && \
+RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d && \
     pip3 install xgboost && \
     pip3 install lightgbm && \
     pip3 install scikit-learn && \
