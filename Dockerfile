@@ -69,6 +69,7 @@ RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd8
     pip3 install appdirs && \
     pip3 install geojson_rewind && \
     pip3 install geomet && \
+    pip3 install requests_cache && \
     pip3 install git+git://github.com/sckott/pygbif.git#egg=pygbif
     
 # 3D visualizations with crumbs and MAYAVI
