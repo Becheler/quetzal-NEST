@@ -60,13 +60,15 @@ RUN pip3 install rasterio && \
     pip3 install shapely && \
     pip3 install fiona
 
-# For crumbs.get_gbif crumbs.get_chelsa and crumbs.sdm
+# For crumbs.get_chelsa and crumbs.sdm
 RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d && \
     pip3 install xgboost && \
     pip3 install lightgbm && \
     pip3 install scikit-learn && \
-    pip3 install geopandas && \
-    pip3 install appdirs && \
+    pip3 install geopandas
+    
+# crumbs.get_gbif weird dependencies
+RUN pip3 install appdirs && \
     pip3 install geojson_rewind && \
     pip3 install geomet && \
     pip3 install requests_cache && \
