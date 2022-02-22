@@ -66,9 +66,8 @@ RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd8
     pip3 install lightgbm && \
     pip3 install scikit-learn && \
     pip3 install geopandas && \
-    pip3 install pygbif && \
-    pip3 install requests-cache
-
+    pip3 install git+https://github.com/gbif/pygbif.git@110e0cbcd8cb2b1813f6e27d66e95a95579d4643
+    
 # 3D visualizations with crumbs and MAYAVI
 
 # xcb plugin
