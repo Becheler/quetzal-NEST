@@ -80,7 +80,12 @@ RUN pip3 install appdirs && \
 RUN pip3 install pyvirtualdisplay pillow EasyProcess
 # install all dependencies and backends on Ubuntu 20.04:
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends xvfb xserver-xephyr tigervnc-standalone-server x11-utils gnumeric && \
+    apt-get install -y --no-install-recommends \
+                    xvfb \
+                    xserver-xephyr \
+                    tigervnc-standalone-server \
+                    x11-utils \
+                    gnumeric && \
     apt-get clean -y
  
 # Qt platform plugin xcb for mayavi
@@ -106,7 +111,7 @@ RUN python3 -m pip install vtk
 
 # Tool for image processing
 RUN apt-get update && \
-    apt-get install -y python3-opencv && \ 
+    apt-get install -y python3-opencv && \
     apt-get clean -y
     
 RUN pip3 install opencv-python
