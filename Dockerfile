@@ -79,40 +79,38 @@ RUN pip3 install appdirs && \
 # PyVirtualDisplay and its dependencies 
 RUN pip3 install pyvirtualdisplay pillow EasyProcess
 # install all dependencies and backends on Ubuntu 20.04:
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends \
-                    xvfb \
-                    xserver-xephyr \
-                    tigervnc-standalone-server \
-                    x11-utils \
-                    gnumeric && \
-    apt-get clean -y
- 
+RUN apt-get update -y && apt-get install -y \
+    xvfb \
+    xserver-xephyr \
+    tigervnc-standalone-server \
+    x11-utils \
+    gnumeric \
+    && apt-get clean -y
+    
 # Qt platform plugin xcb for mayavi
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends \
-                    xvfb \
-                    libxkbcommon-x11-0 \
-                    libxcb-icccm4 \
-                    libxcb-image0 \
-                    libxcb-keysyms1 \
-                    libxcb-randr0 \
-                    libxcb-render-util0 \
-                    libxcb-xinerama0 && \
-    apt-get clean -y
+RUN apt-get update -y && apt-get install -y \
+    xvfb \
+    libxkbcommon-x11-0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-xinerama0 \
+    && apt-get clean -y
     
 # Solving a mysterious xcfb error
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends qt5-default && \
-    apt-get clean -y
+RUN apt-get update -y && apt-get install -y \
+    qt5-default \
+    && apt-get clean -y
 
 # The Visualization Toolkit
 RUN python3 -m pip install vtk
 
 # Tool for image processing
-RUN apt-get update && \
-    apt-get install -y python3-opencv && \
-    apt-get clean -y
+RUN apt-get update && apt-get install -y \
+    python3-opencv \
+    && apt-get clean -y
     
 RUN pip3 install opencv-python
 RUN pip3 install PyVirtualDisplay
