@@ -104,6 +104,11 @@ RUN apt-get update -y && apt-get install -y \
     qt5-default \
     && apt-get clean -y
 
+# avoid _XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+RUN mkdir /tmp/.X11-unix && \
+	chmod 1777 /tmp/.X11-unix && \
+	chown root /tmp/.X11-unix/
+      
 # The Visualization Toolkit
 RUN python3 -m pip install vtk
 
