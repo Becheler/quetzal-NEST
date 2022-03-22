@@ -112,6 +112,12 @@ RUN mkdir /tmp/.X11-unix && \
 RUN Xvfb :99 &
 ENV DISPLAY :99
 
+# avoid matplotlib warning
+ENV MPLCONFIGDIR="/tmp"
+
+# avoid QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-'
+ENV XDG_RUNTIME_DIR="/tmp/runtime-"
+
 # The Visualization Toolkit
 RUN python3 -m pip install vtk
 
