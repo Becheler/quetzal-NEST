@@ -108,7 +108,10 @@ RUN apt-get update -y && apt-get install -y \
 RUN mkdir /tmp/.X11-unix && \
 	chmod 1777 /tmp/.X11-unix && \
 	chown root /tmp/.X11-unix/
-      
+# probably not required during image build
+RUN Xvfb :99 &
+ENV DISPLAY :99
+
 # The Visualization Toolkit
 RUN python3 -m pip install vtk
 
