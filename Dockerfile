@@ -48,17 +48,21 @@ RUN set -xe \
 
 RUN pip3 install --upgrade pip
 
-# for crumbs ackage publishing
+# for crumbs package publishing
 RUN pip3 install build twine pipenv numpy
 
-# for crumbs geospatial
+# for crumbs geospatial & parallelism
 RUN pip3 install rasterio && \
     pip3 install matplotlib && \
     pip3 install imageio && \
     pip3 install imageio-ffmpeg && \
     pip3 install pyproj && \
     pip3 install shapely && \
-    pip3 install fiona
+    pip3 install fiona && \
+    pip3 install "dask[complete]" && \
+    pip3 install xarray && \
+    pip3 install rioxarray
+  
 
 # For crumbs.get_chelsa and crumbs.sdm
 RUN pip3 install git+https://github.com/perrygeo/pyimpute.git@1371e5bf1f5ef35bd88ea5c2d57d2cbedf4f5d1d && \
