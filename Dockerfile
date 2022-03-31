@@ -134,7 +134,7 @@ RUN pip3 install opencv-python
 RUN pip3 install PyVirtualDisplay
 RUN pip3 install mayavi PyQt5
   
-RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==1.0.14
+RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 quetzal-crumbs==1.0.15
 
 # Clean to make image smaller
 RUN apt-get autoclean && \
